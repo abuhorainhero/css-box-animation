@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.parent {
+  background-color: mediumslateblue;
+  width: 700px;
+  height: 600px;
+}
+
+.child {
+  width: 50%;
+  height: 50%;
+  background-color: red;
+
+  animation-name: box-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+.parent:hover {
+  cursor: pointer;
+}
+.parent:hover .child {
+  animation-play-state: paused;
+}
+
+@keyframes box-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    background-color: rgb(4, 247, 4);
+    transform: translateY(100%);
+  }
+  50% {
+    background-color: green;
+    transform: translateX(100%) translateY(100%);
+  }
+  75% {
+    background-color: rgb(3, 3, 3);
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
